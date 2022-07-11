@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{% if first_site: %}
+<div>
+    <a href="#">{{ poll.first_site_url }}</a> by <a href="#">{{ poll.first_site_developer }}</a>
+    <p> Upvote ({{poll.first_site_votes}})</p>
+    <p>{{ poll.first_site_about }}</p>
+    <img src="{{ poll.first_site_img_url }}" alt="website screenshot">
+</div>
+{% else: %}
+<div>
+    <a href="#">{{ poll.second_site_url }}</a> by <a href="#">{{ poll.second_site_developer }}</a>
+    <p> Upvote ({{poll.second_site_votes}})</p>
+    <p>{{ poll.second_site_about }}</p>
+    <img src="{{ poll.second_site_img_url }}" alt="website screenshoot">
+</div>
+{% endif %}
+{% endblock %}

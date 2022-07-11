@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <a href="#">{{ poll.first_site_url }}</a> by <a href="#">{{ poll.first_site_developer }}</a>
+    <a href="{{ url_for('show_first_site_info', poll_id=poll.id) }}">See more</a>
+    <a href="{{ url_for('increase_first_site_votes', poll_id=poll.id) }}"> Upvote ({{ poll.first_site_votes }})</a>
+</div>
+<div>
+    <a href="#">{{ poll.second_site_url }}</a> by <a href="#">{{ poll.second_site_developer }}</a>
+    <a href="{{ url_for('show_second_site_info', poll_id=poll.id) }}">See more</a>
+    <a href="{{ url_for('increase_second_site_votes', poll_id=poll.id) }}"> Upvote ({{ poll.second_site_votes}})</a>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if polls: %}
+        {% for poll in polls: %}
+            <div>
+                <h2>{{ poll.first_site_developer }}</h2> vs <h2>{{ poll.second_site_developer }}</h2>
+                <a href="{{ url_for('show_poll', poll_id=poll.id) }}">Go to poll</a>
+            </div>
+        {% endfor %}
+    {% else: %}
+        <p>No poll here</p>
+    {% endif %}
+{% endblock %}
